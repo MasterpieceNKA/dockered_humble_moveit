@@ -56,8 +56,12 @@ source ~/ws_moveit2/install/setup.bash && \
 <img src="figures/fig_2.png" alt="MoveIT Task Planner Pick and Place Demo" style="width:900px;"/>
 
 
-## Setup video guide
-<iframe width="560" height="315" src="https://youtu.be/O-1l_8msafI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+## Setup YouTube video guide
+
+[![Setup YouTube video guide](http://i.ytimg.com/vi/O-1l_8msafI/hqdefault.jpg)](https://www.youtube.com/watch?v=O-1l_8msafI) 
+
+
+
 
 
 
