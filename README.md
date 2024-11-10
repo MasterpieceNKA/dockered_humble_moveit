@@ -62,7 +62,7 @@ source ~/ws_moveit2/install/setup.bash && \
 
 ## Setup YouTube video guide
 
-[![Setup YouTube video guide](http://i.ytimg.com/vi/O-1l_8msafI/hqdefault.jpg)](https://www.youtube.com/watch?v=O-1l_8msafI) 
+[![Setup YouTube video guide](http://i.ytimg.com/vi/Tmkmt4SZ_t8/hqdefault.jpg)](https://www.youtube.com/watch?v=Tmkmt4SZ_t8) 
 
 
 
