@@ -36,7 +36,7 @@ a) Motion Planning Demo
     source ~/ws_moveit2/install/setup.bash \
         && ros2 launch moveit2_tutorials demo.launch.py
     ```
-<img src="figures/fig2.png" alt="Motion Planning Demo" style="width:900px;"/>
+<img src="figures/fig_1.png" alt="Motion Planning Demo" style="width:900px;"/>
 
 
 
