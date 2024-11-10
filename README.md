@@ -57,7 +57,8 @@ source ~/ws_moveit2/install/setup.bash && \
 
 
 ## Setup video guide
-<video src="https://youtu.be/O-1l_8msafI" width="900px" controls autoplay></video>
+<iframe width="560" height="315" src="https://youtu.be/O-1l_8msafI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 
 
