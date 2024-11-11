@@ -26,13 +26,7 @@ https://github.com/user-attachments/assets/8d09056a-3790-4e9a-9226-dc3e4273d62a
 
 
 
-3. Setup MoveIT2 using provided script
-
-    ```sh
-    ./moveit_setup.sh
-    ```
-
-4. Test using MoveIT Tutorial Demos
+3. Test using MoveIT Tutorial Demos
 
 a) Motion Planning Demo
 

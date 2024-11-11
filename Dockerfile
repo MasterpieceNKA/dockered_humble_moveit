@@ -29,6 +29,7 @@ RUN sudo apt install -y \
     build-essential \
     cmake \
     git \
+    nano \
     ntp \
     python3-colcon-common-extensions \
     python3-colcon-mixin \
@@ -45,15 +46,25 @@ RUN sudo apt update && sudo apt dist-upgrade -y && sudo apt upgrade -y
 # Rosdep update
 RUN rosdep update
 
-## Copy the entrypoint and bashrc scripts so we have 
-# our container's environment set up correctly
+# Source the ROS setup file
+RUN echo "export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp" >> ~/.bashrc
+RUN echo "export ROS_LOCALHOST_ONLY=0" >> ~/.bashrc
+RUN echo "export ROS_DOMAIN_ID=1" >> ~/.bashrc
+RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc
+RUN echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> ~/.bashrc
+
+# Install MoveIT
+USER $USERNAME
+COPY moveit_setup.sh /moveit_setup.sh
+RUN sudo chmod +x /moveit_setup.sh
+RUN sudo chown $USERNAME /moveit_setup.sh
+RUN /moveit_setup.sh
+
+################################
+## ADD ANY CUSTOM SETUP BELOW ##
+################################
 COPY entrypoint.sh /entrypoint.sh
-COPY bashrc /home/${USERNAME}/.bashrc 
-
-## Grant user rwxr permissions
-RUN sudo chown $USERNAME /home/${USERNAME}/.bashrc 
-
-## Set up entrypoint and default command
-ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
-CMD ["bash"]
+RUN sudo chmod +x /entrypoint.sh
+ENTRYPOINT ["/bin/bash", "/entrypoint.sh" ] 
+CMD ["bash"] 
 
