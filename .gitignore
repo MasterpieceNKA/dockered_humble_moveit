@@ -1,1 +1,6 @@
-log
+build
+install
+log 
+src/*
+!src/README.md
+
