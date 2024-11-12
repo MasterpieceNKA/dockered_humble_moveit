@@ -60,7 +60,7 @@ source ~/ws_moveit2/install/setup.bash && \
 
 
 
-4. Give the project a star :smiley: . Then Code away! Add your ROS2 source code in the ```/src``` folder, build, and run.
+4. Give the project a star :star_struck: :smiley: . Then Code away! Add your ROS2 source code in the ```/src``` folder, build, and run.
   
 
 
