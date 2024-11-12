@@ -61,11 +61,10 @@ RUN $SETUP_FILE
 ################################
 ## ADD ANY CUSTOM SETUP BELOW ##
 ################################
-#RUN sudo wget \
-#    "https://gist.githubusercontent.com/MasterpieceNKA/1d8fd9ddc2e9d7bad3aa0102667fd7cd/raw/d98413fcd7ede9ed9551e3f0a974ca7d64abe890/docker_ros2_entrypoint.sh" \
-#    -O /docker_ros2_entrypoint.sh
-#RUN sudo chmod +x /docker_ros2_entrypoint.sh
-#RUN sudo chown $USERNAME /docker_ros2_entrypoint.sh
-ENTRYPOINT ["/bin/bash", "/entrypoint.sh" ] 
+#COPY entrypoint.sh /entrypoint.sh
+RUN sudo wget \
+    "https://gist.githubusercontent.com/MasterpieceNKA/1d8fd9ddc2e9d7bad3aa0102667fd7cd/raw/382864564948d72d81318173f614c31e2993183d/docker_ros2_entrypoint.sh" \
+    -O /docker_ros2_entrypoint.sh
+ENTRYPOINT ["/bin/bash", "/docker_ros2_entrypoint.sh"] 
 CMD ["bash"] 
 
