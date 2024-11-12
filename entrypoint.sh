@@ -2,7 +2,8 @@
 
 set -e
 
-source /opt/ros/humble/setup.bash
+# Do all the needed sourcing in ~/.bashrc file 
+#source /opt/ros/humble/setup.bash
 
 echo "Provided arguments: $@"
 

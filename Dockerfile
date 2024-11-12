@@ -48,23 +48,24 @@ RUN rosdep update
 
 # Source the ROS setup file
 RUN echo "export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp" >> ~/.bashrc
-RUN echo "export ROS_LOCALHOST_ONLY=0" >> ~/.bashrc
-RUN echo "export ROS_DOMAIN_ID=1" >> ~/.bashrc
 RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc
 RUN echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> ~/.bashrc
 
 # Install MoveIT
-COPY moveit_setup.sh /moveit_setup.sh
-RUN sudo chmod +x /moveit_setup.sh
-RUN sudo chown $USERNAME /moveit_setup.sh
-RUN /moveit_setup.sh
+ARG SETUP_FILE=./moveit2_humble_setup.sh
+RUN sudo wget 'https://gist.githubusercontent.com/MasterpieceNKA/28e10beee8f10c2a41228d8a7fb8348d/raw/8091094222c342e331adf2ed9da2710274749335/moveit2_humble_setup.sh' 
+RUN sudo chmod +x $SETUP_FILE
+RUN sudo chown $USERNAME $SETUP_FILE
+RUN $SETUP_FILE
 
 ################################
 ## ADD ANY CUSTOM SETUP BELOW ##
 ################################
-COPY entrypoint.sh /entrypoint.sh
-RUN sudo chmod +x /entrypoint.sh
-RUN sudo chown $USERNAME /entrypoint.sh
+#RUN sudo wget \
+#    "https://gist.githubusercontent.com/MasterpieceNKA/1d8fd9ddc2e9d7bad3aa0102667fd7cd/raw/d98413fcd7ede9ed9551e3f0a974ca7d64abe890/docker_ros2_entrypoint.sh" \
+#    -O /docker_ros2_entrypoint.sh
+#RUN sudo chmod +x /docker_ros2_entrypoint.sh
+#RUN sudo chown $USERNAME /docker_ros2_entrypoint.sh
 ENTRYPOINT ["/bin/bash", "/entrypoint.sh" ] 
 CMD ["bash"] 
 
