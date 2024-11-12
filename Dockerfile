@@ -54,7 +54,6 @@ RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc
 RUN echo "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash" >> ~/.bashrc
 
 # Install MoveIT
-USER $USERNAME
 COPY moveit_setup.sh /moveit_setup.sh
 RUN sudo chmod +x /moveit_setup.sh
 RUN sudo chown $USERNAME /moveit_setup.sh
@@ -65,6 +64,7 @@ RUN /moveit_setup.sh
 ################################
 COPY entrypoint.sh /entrypoint.sh
 RUN sudo chmod +x /entrypoint.sh
+RUN sudo chown $USERNAME /entrypoint.sh
 ENTRYPOINT ["/bin/bash", "/entrypoint.sh" ] 
 CMD ["bash"] 
 

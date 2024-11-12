@@ -33,4 +33,6 @@ colcon build --event-handlers desktop_notification- status-  --executor sequenti
 
 echo "source $COLCON_WS/install/setup.bash" >> ~/.bashrc 
 
-source ~/.bashrc
+source ~/.bashrc  
+
+
