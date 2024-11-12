@@ -65,6 +65,10 @@ source ~/ws_moveit2/install/setup.bash && \
 
 
 
+https://github.com/user-attachments/assets/10c6214d-6727-4a09-b441-4f1374dd469e
+
+
+
 
 
 
